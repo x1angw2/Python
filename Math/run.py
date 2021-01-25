@@ -10,7 +10,7 @@ from reportlab.lib.pagesizes import A4,B9,LETTER
 from reportlab.lib.units import inch
 
 def number_one():
-    number_1 = random.randint(1,9)
+    number_1 = random.randint(2,9)
     number_2 = random.randint(11,100)
     return number_1,number_2
 
