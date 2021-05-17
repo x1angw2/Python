@@ -1,8 +1,8 @@
-from multiprocessing import Process
-import time
-import random
+from flask import Flask
 
 
-def produce(i,name):
-    p = Process(target=i,args=(name,))
-
+app = Flask(__name__)
+@app.route('/index/',methods=['GET','POST'])
+def index():
+    return 'OK'
+app.run()

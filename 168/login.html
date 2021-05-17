@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title id="title">教育装备管理系统</title>
+    <link rel="stylesheet" href="../../SysCss/login/style.css">
+    <link href="../../plugins/layer/theme/default/layer.css" rel="stylesheet" />
+</head>
+<body id="content">
+    <div class="box">
+        <img src="../../Image/login/img/di_yuan.png" alt="" class="yuan">
+        <img src="../../Image/login/img/chahua.png" alt="" class="tu">
+        <div class="right">
+            <p class="title" id="xttitle">教育装备管理系统</p>
+            <div class="ewm_bp">
+                <div class="tp_ewm"></div>
+                <div class="erweim">
+                    <p>移动端扫码登录</p>
+                </div>
+            </div>
+            <ul>
+                <li class="li_1">
+                    <textarea id="pubkey" rows="15" cols="65" style="display:none;">
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOr/hKC8HNw9wZc2oUuPRhXEe0
+B2ndQKanotroZtgBQ6x1ckQioqcoyQWPnOm7ewK+qh0EAMo8UvJSiO0X1SpmxsoG
+Ndar4Bw5jofgwioLAPZDC12HdbkeGxVhUY7gArnmRmABr9NsBLkycs2h6oe2xlAs
+OHAYbSWTcYc0RbSrsQIDAQAB</textarea>
+                    <span></span>
+                    <input type="text" id="account" placeholder="请输入用户名">
+                </li>
+                <li class="li_2">
+                    <span></span>
+                    <input type="password" id="userpwd" placeholder="请输入密码">
+                </li>
+                <li class="li_3">
+                    <span class="yzm"> <img alt="点击刷新" style="width: 100%; height: 100%;" src="/Function/ADataAshx/Verify_code.ashx" id="Verify_codeImag" onclick="ToggleCode(this.id, '/Function/ADataAshx/Verify_code.ashx');return false;" /></span>
+                    <input type="text" class="ipt_yzm" id="txtCode" name="txtCode" placeholder="验证码" maxlength="4" onchange="qkerror()">
+                </li>
+                <li class="li_app">
+                    <!--<label><input class="ckb" type="checkbox" /> 测试</label>
+                    <a>忘记密码？</a>-->
+                </li>
+                <li class="li_4" style="color:#f56c6c;font-size: 14px;">
+                    <p id="errorMsg"></p>
+                </li>
+                <li class="li_5">
+                    <button class="btn" id="btnlogin" onclick="CheckUserDataValid()">登 录</button>
+                </li>
+                <li class="li_6">
+                    <a class="sp1" id="qq">
+                        <img src="../../Image/login/img/QQ.png" alt="" style="height:40px; margin-top:10px;float: left;">
+                        <i style="height:40px;margin-top:10px;display:inline-block;line-height: 40px;padding-left: 5px;color:black;">QQ</i>
+                    </a>
+                    <a class="sp2" id="weixin">
+                        <img src="../../Image/login/img/WX.png" alt="" style="height:40px; margin-top:10px;float: left;">
+                        <i style="height:40px;margin-top:10px;display:inline-block;line-height: 40px;padding-left: 5px;color:black;">微信</i>
+                    </a>
+                </li>
+                <li style="margin-top:-10px;" class="li_7">
+                    <div class="lg-5">
+                        <div class="azaddress">安卓客户端</div>
+                        <div class="appewm"><p>手机浏览器扫码下载</p></div>
+                    </div>
+                    <div class="lg-7">
+                        <a href="UpdateLog.aspx" target="_blank">版本：<span id="spversion"></span></a>
+                    </div>
+                    <!--<div>
+                        <a class="lg-12">总计访问人数:999999 人</a>
+                    </div>-->
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="../../SysJavaScript/jquery.js"></script>
+<script src="../../plugins/layer/layer.js"></script>
+<script src="../../SysJavaScript/qrcode/jquery.qrcode.js"></script>
+<script src="../../SysJavaScript/qrcode/qrcode.js"></script>
+<script src="loginyz.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (ISIEVD() < 9) {
+            window.location.href = "/isie.html";
+        }
+        var a1 = $("body").height()
+        if (a1 <= 600) {
+            $(".right").css({
+                "height": "350px"
+            })
+            $("input").css({
+                "height": "30px"
+            })
+            $("ul li").css({
+                "margin-top": "3px"
+            })
+            $(".li_3 .yzm").css({
+                "height": "30px"
+            })
+            $(".title").css({
+                "padding": "20px 0",
+                "font-size": "18px"
+            })
+            $(".li_1 span,.li_2 span").css({
+                "height": "18px",
+                "width": "18px"
+            })
+            $(".btn").css({
+                "height": "30px",
+                "line-height": "28px",
+                "font-size": "12px"
+            })
+        } else if (a1 <= 860) {
+            $(".right").css({
+                "height": "450px"
+            })
+            $(".title").css({
+                "padding": "20px"
+            })
+            $(".li_4").css({
+                "height": "30px",
+                "margin-top": "10px"
+            })
+        }
+    });
+</script>
+<script src="login.js"></script>
+<script src="../../SysJavaScript/jsencrypt.min.js"></script>
+</html>
